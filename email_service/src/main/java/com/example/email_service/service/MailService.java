@@ -31,7 +31,7 @@ public class MailService {
         System.out.println("\n✅ MailService.sendMail()");
         MimeMessagePreparator messagePreparator = mimeMessage -> {
             var messageHelper = new MimeMessageHelper(mimeMessage);
-                messageHelper.setFrom("reddit_clone@gmail.com");
+                messageHelper.setFrom("blog-app@gmail.com");
                 messageHelper.setTo(email.getRecipient());
                 messageHelper.setSubject(email.getSubject());
                 messageHelper.setText(email.getBody());

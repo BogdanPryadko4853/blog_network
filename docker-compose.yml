@@ -1,11 +1,11 @@
 version: '3'
 services:
   app:
-    build: Community_Blogging_App_Java
+    build: Blogging_App_Java
     ports:
       - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/reddit_clone
+      SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/blog-app
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: password
       SPRING_REDIS_HOST: cache
@@ -40,8 +40,6 @@ services:
     image: confluentinc/cp-kafka:7.0.1
     container_name: broker
     ports:
-    # To learn about configuring Kafka for access across networks see
-    # https://www.confluent.io/blog/kafka-client-cannot-connect-to-broker-on-aws-on-docker-etc/
       - "9092:9092"
     depends_on:
       - zookeeper

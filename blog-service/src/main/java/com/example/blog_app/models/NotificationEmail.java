@@ -1,4 +1,4 @@
-package com.example.email_service.models;
+package com.example.blog_app.models;
 
 
 import lombok.AllArgsConstructor;
