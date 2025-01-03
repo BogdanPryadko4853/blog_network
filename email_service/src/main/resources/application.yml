@@ -1,0 +1,35 @@
+
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+  port: 8081
+
+spring:
+  application:
+    name: email-service
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+  mail:
+    host: localhost
+    port: 1025
+    username: spring
+    password: password
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+  kafka:
+    bootstrap-servers: localhost:9092
+    topics:
+      groupId: groupId
+      notificationTopic: notificationTopic
+      commentTopic: commentTopic
